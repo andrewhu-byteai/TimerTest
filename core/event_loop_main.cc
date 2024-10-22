@@ -6,7 +6,7 @@
 
 void doTimer(std::shared_ptr<EventLoop> event_loop, uint64_t sta) {
   auto diff = Timer::nowNanoSecond() - sta;
-  std::cout << "Time Interval:" << (diff) / 1000 << "(ms)" << " Expected:" << WAIT_MICROSECONDS << "(ms)" << std::endl;
+  std::cout << "Time Interval:" << (diff) / 1000 << "(us)" << " Expected:" << WAIT_MICROSECONDS << "(us)" << std::endl;
 
   sta = Timer::nowNanoSecond();
   event_loop->SetTimer(WAIT_MICROSECONDS, [event_loop, sta]() {
